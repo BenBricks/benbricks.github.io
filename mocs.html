@@ -25,7 +25,7 @@
         <link rel="stylesheet" href="styles/animation/shakecss.css">
     </head>
     <body>
-        <!--HAUT DE PAGE-->
+		<!--HAUT DE PAGE-->
 
 		<!--bande-->
 		<div class="w3-container rcolor-gr-15">
@@ -44,17 +44,17 @@
 			<!--menu-->
 			<div class="w3-container rcolor-bl-60">
 				 <div class="w3-bar rcolor-bl-60 w3-large">
-					<div class="w3-mobile w3-bar-item w3-button w3-padding-large w3-hover-white rcolor-white">Acceuil</div>
-					<a href="mocs.html" class="w3-mobile w3-bar-item w3-button w3-padding-large rcolor-hover-bl-55">Mocs</a>					
+					<a href="acceuil.html" class="w3-mobile w3-bar-item w3-button w3-padding-large rcolor-hover-bl-55">Acceuil</a>
+					<div class="w3-mobile w3-bar-item w3-button w3-padding-large w3-hover-white rcolor-white">Mocs</div>
 					<a href="#" class="w3-mobile w3-bar-item w3-button w3-padding-large rcolor-hover-bl-55">Notices</a>
 					<a href="#" class="w3-mobile w3-bar-item w3-button w3-padding-large rcolor-hover-bl-55">Nouveautés</a>
 				</div> 
 			</div>
 		</div>
 		<br>
-        <!--HAUT DE PAGE-->
+		<!--HAUT DE PAGE-->
 
-        <!--CONTENU-->
+		<!--CONTENU-->
 		<!--page1-->
 		<div class="w3-content rcolor-white">
 			<!--message maintenance-->
@@ -67,6 +67,58 @@
 			</div>
 			<!--tableau mocs-->
 			<div class="w3-container w3-card">
+				<h2>Mocs</h2>
+				<!--bouton-->
+				<input class="w3-input w3-animate-input w3-border w3-padding" style="width:250px" placeholder="Chercher dans les Mocs ..." id="myInput" onkeyup="myFunction()">				
+				<!--tableau-->
+				<table class="w3-table-all w3-margin-top" id="myTable">
+					<tr>
+						<th style="width:70%;">Mocs</th>
+						<th style="width:20%;">Catégorie</th>
+						<th style="width:10%;">N°</th>
+					</tr>
+					<tr class="rcolor-hover-bl-60">
+						<td><a href="mocs01.html">Lego Technic Compresseur</a> <span class="w3-tag rcolor-bl-60">Nouveau !</span></td>
+						<td>Technics</td>
+						<td>01</td>
+					</tr>
+					<tr class="rcolor-hover-bl-60">
+						<td><a href="erreur_page.html">Lego technic Robot Delta V1</a> <span class="w3-tag rcolor-bl-60">Nouveau !</span></td>
+						<td>Technics</td>
+						<td>02</td>
+					</tr>
+					<tr class="rcolor-hover-bl-60">
+						<td><a href="erreur_page.html">Lego Technic Robot Delta V2</a> <span class="w3-tag rcolor-bl-60">Nouveau !</span></td>
+						<td>Technics</td>
+						<td>03</td>
+					</tr>
+					<tr class="rcolor-hover-bl-60">
+						<td><a href="erreur_page.html">Lego Pied d'Exposition Star Wars</a></td>
+						<td>Technics / classics</td>
+						<td>04</td>
+					</tr>
+				</table>
+				<br>
+				<script>
+				function myFunction() {
+				  var input, filter, table, tr, td, i;
+				  input = document.getElementById("myInput");
+				  filter = input.value.toUpperCase();
+				  table = document.getElementById("myTable");
+				  tr = table.getElementsByTagName("tr");
+				  for (i = 0; i < tr.length; i++) {
+					td = tr[i].getElementsByTagName("td")[0];
+					if (td) {
+					  txtValue = td.textContent || td.innerText;
+					  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						tr[i].style.display = "";
+					  } else {
+						tr[i].style.display = "none";
+					  }
+					}
+				  }
+				}
+				</script>
 			</div>
 		</div>
 		<br>
@@ -76,10 +128,11 @@
 				<h2>---</h2>
 			</div>
 		</div>
-		<br><br>	
-        <!--CONTENU-->
+		<br><br>
+	
+		<!--CONTENU-->
 
-        <!--BOUTON HAUT-->		
+		<!--BOUTON HAUT-->			
 		<button onclick="topFunction()" id="myBtn" class="w3-button w3-bottom rcolor-bl-55 rcolor-hover-bl-60" style="width:100px" title="Haut">Haut</button> 
 		<script>
 			 //Get the button:
@@ -101,7 +154,7 @@
 			  document.body.scrollTop = 0; // For Safari
 			  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 			} 
-		</script> 	
-        <!--BOUTON HAUT-->
-    </body>
-</html>
+		</script>
+		<!--BOUTON HAUT-->	
+	</body>	
+</html>	
