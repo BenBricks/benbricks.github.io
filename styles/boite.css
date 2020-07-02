@@ -1,0 +1,32 @@
+/*https://rombrickscode.github.io/rbc-projects
+------------------------------------
+-----boite.css-by-Rombrickscode-----
+----------------------------------*/
+body{margin: 0px;}
+* {box-sizing: border-box;}
+.groupe::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.boite {
+    float: left;
+    padding: 10px;
+}
+@media only screen and (min-width: 601px) {
+    .un-douziemes, .taile-1sur12 {width: 8.33%;}
+    .deux-douziemes, .taile-2sur12 {width: 16.66%;}
+    .trois-douziemes, .un-quarts, .taile-1sur4 {width: 25%;}
+    .quatre-douziemes, .un-tiers, .taile-1sur3 {width: 33.33%;}
+    .cinq-douziemes, .taile-5sur12 {width: 41.66%;}
+    .six-douxièmes, .un-demi, .taile-1sur2{width: 50%;}
+    .sept-douziemes, .taile-7sur12 {width: 58.33%;}
+    .huit-douziemes, .deux-tiers, .taile-2sur3 {width: 66.66%;}
+    .neuf-douzieme, .trois-quarts, .taile-3sur4 {width: 75%;}
+    .dix-douzieme, .taile-10sur12 {width: 83.33%;}
+    .onze-douzieme, .taile-11sur12 {width: 91.66%;}
+    .taile-1sur1 {width: 100%;}
+}
+@media only screen and (max-width: 600px) {
+    .boite {width: 100%;}
+}
