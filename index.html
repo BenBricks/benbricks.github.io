@@ -1,14 +1,23 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet"> 
-<style>@import url('blink.css'); body{font-family: Arial, Helvetica, sans-serif;}.protection-txt{user-select: none; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}.ctn1{font-family: 'Yanone Kaffeesatz', sans-serif;} .ctn2{font-size: 27px;} a{text-decoration: none; color: white;} body{margin: 15px;}</style>
+<style>@import url('blink.css'); @import url('loader.css'); body{font-family: Arial, Helvetica, sans-serif;}.protection-txt{user-select: none; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}.ctn1{font-family: 'Yanone Kaffeesatz', sans-serif;} .ctn2{font-size: 27px;} a{text-decoration: none; color: white;} body{margin: 15px;}</style>
+</head>
 <body>
+<div id="br">
 <!--<p style="font-size:40px ; text-align: center; color: firebrick; background-color: gainsboro; border: solid 4px firebrick; padding: 50px; border-radius: 15px;"><span class="ctn1 protection-txt">RomBricksCode</span><span class="ctn2">.github.io</span><br><br>Accès refusé</p>-->
 <p style="font-size:40px ; text-align: center; color: rgb(53, 53, 53);  padding: 50px; border-radius: 15px;"><span class="ctn1 protection-txt">RomBricksCode</span><span class="ctn2">.github.io</span></p>
+</div>
+<div id="cr">
 <div style="font-size:20px ; text-align: center; color: rgb(21, 180, 92); background-color: gainsboro; border: solid 8px rgb(21, 180, 92); padding: 50px; margin-left:auto; margin-right: auto; max-width: 950px; border-radius: 15px;">
 <p style="font-size: 30px">Accéder à une ressource :<br></p>
 <p><a class="blink_text" title="Chercher une image..." style="padding:10px; text-align: center; background-color: rgb(21, 180, 92);" href="javascript:image()">Chercher une image...</p></a>
 <!--<a title="Accéder à une ressource" style="padding:10px; text-align: center; background-color: rgb(38, 211, 110);" href="javascript:style()">Chercher une Autre ressource...</a>--></p>
 </div><br><br>
 <p style="font-size: 20px; color: rgb(53, 53, 53);">©RomBricksCode 2020 - All right reserved.</p>
+</div>
+<div id="ar" class="jiu loh" style="padding: 20px;"></div>
+<div id="az">recherche d'une image en cours...</div>
 <script>
     function style() {
         self.location.href=prompt("none","") + ".none";
@@ -17,5 +26,23 @@
         document.write("recherche d'une image en cours...")
         self.location.href=prompt("Chercher une image...","") + ".png";
     }
+    document.getElementById("ar").style.display = "block"
+    document.getElementById("br").style.display = "none"
+    document.getElementById("cr").style.display = "none"
+    document.getElementById("az").style.display = "none"
+	window.onload = function()
+	{
+		setTimeout(function()
+		{
+			document.getElementById("ar").style.display = "none";
+            document.getElementById("br").style.display = "block";
+		}, 1000);
+	}
+	{
+		setTimeout(function()
+		{
+		document.getElementById("cr").style.display = "block"
+		}, 2000);
+	}
 </script>
-</body>    
+</body>
