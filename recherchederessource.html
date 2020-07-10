@@ -89,6 +89,31 @@ https://rombrickscode.github.io
             #a{display: block;}
             #b{display:none;}
             #c{display:none;}
+            #y{display: block;}
+            #x{display: none;}
+            .modal {
+                position: fixed;
+                z-index: 1;
+                padding-top: 100px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto; 
+                background-color: rgb(0,0,0);
+                background-color: rgba(0,0,0,0.4);
+            }
+            .modal-content {
+                border-radius: 10px;
+                background-color: #f8e1b6;
+                margin: auto;
+                padding: 20px;
+                border: 5px solid rgb(221, 138, 13);
+                width: 80%;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif, Helvetica, sans-serif;
+                font-size: 50px;
+            }
         </style>
     </head>
     <body>
@@ -124,6 +149,13 @@ https://rombrickscode.github.io
             ©RomBricksCode 2020 - All right reserved.<br><br><br><br></div>
         </div>
         <div  id="text"></div>
+        <noscript>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span style="font-size: 80px">!</span><br><br><b>Veuillez activer javascript.</b>
+                </div>
+            </div>       
+        </noscript>
         <script type="text/javascript">
             document.getElementById("c3spinner").style.display="none";
             //get-a
