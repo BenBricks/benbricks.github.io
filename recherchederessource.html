@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+            @import url('https://benbricks.github.io/loader.css');
+            body{
+                margin: 0px;
+                padding: 30px; padding-bottom: 0px;
+                /*background: repeating-radial-gradient(circle at 0 0, rgb(223, 223, 223), rgb(255, 255, 255) 200px);*/
+                color: rgb(77, 77, 77);
+                background-color: rgb(220, 220, 220);
+                font-family: roboto;}
+            .title{
+                padding-top: 30px;
+                padding-bottom: 30px;
+                text-align: left;
+            }
+            .area{height: 10px}
+            .section1{
+                margin-left: auto; margin-right: auto; max-width: 1000px;
+                /*border: solid 4px rgb(68, 68, 68);*/
+                box-shadow: rgb(68, 68, 68) 1px 1px 30px;
+                border-radius: 20px;
+                background-color: rgb(255, 255, 255);
+                font-size: 24px;
+                text-align: center;
+                font-family: roboto
+            }
+            .sub-section{padding: 30px; border-bottom: solid 5px rgb(220, 220, 220) ; font-family: roboto}
+            .btn{
+                width: 70%;
+                padding: 20px;
+                border:solid 5px rgb(21, 180, 92);
+                border-radius: 20px;
+                color: rgb(255, 255, 255);
+                background-color: rgb(21, 180, 92);
+                font-size: 18px;
+                font-family: roboto
+            }
+            .btn:hover{
+                border-color: rgb(21, 180, 92);
+                color: white;
+                background-color: rgb(120, 214, 162);
+            }
+            .btnactive, .btn:active{
+                border: solid 5px rgb(22, 156, 82);
+                color: rgb(255, 255, 255);
+                background-color: rgb(21, 180, 92);
+            }
+            .disabled, .disabled:hover{
+                border-color: rgb(220, 220, 220);
+                color: rgb(185, 185, 185);
+                background-color: rgb(220, 220, 220);
+            }
+            .disabled:active{
+                border: solid 3px rgb(209, 69, 69);
+                padding: 22px;
+            }
+            input{
+                width: 200px;
+                padding: 22px;
+                border:solid 3px rgb(21, 180, 92);
+                border-radius: 20px;
+                color: rgb(21, 180, 92);;
+                background-color: rgb(255, 255, 255);
+                font-size: 18px;
+                font-family: roboto
+            }
+            input:hover{
+                width: 230px;
+            }
+            .btnsearch{
+                padding: 25px;
+                border: none;
+                border-radius: 20px;
+                color: rgb(77, 77, 77);
+                background-color: rgb(220, 220, 220);
+                font-size: 18px;
+                font-family: roboto
+            }
+            .btnsearch:hover{
+                color: rgb(255, 255, 255);
+                background-color: rgb(21, 180, 92);}
+            #a{display: block;}
+            #b{display:none;}
+            #c{display:none;}
+        </style>
+    </head>
+    <body>
+        <div class="section1" id="a">
+            <div class="sub-section">
+                <div class="title">1 - Selectionner le type de ressource :</div>
+                <button class="btn" id="a1btn" onclick="functiona1()">Images</button>
+                <div class="area"></div>
+                <button class="btn disabled" id="a2btn" onclick="functiona2()" style="cursor: not-allowed;" disabled>Autre</button>
+            </div>
+            <div class="sub-section" id="b">
+                <div class="title">
+                    2 - Selectionner un emplacement d'images :
+                </div>
+                <button class="btn" id="b1btn" onclick="functionb1()">Sur le site RomBricksCode</button>
+                <div class="area"></div>
+                <button class="btn" id="b2btn" onclick="functionb2()">Sur le site Rbricks</button>
+            </div>
+            <div class="sub-section" id="c">
+                <div class="title">
+                    3 - Rechercher une image :
+                </div>
+                <div style="display:inline-block;">
+                    <label><input id="c1input" type="text" placeholder="n° de l'image..."/></label>
+                    <!--<div class="area"></div>-->
+                    <button id="c2btn" class="btnsearch" onclick="functionc()">Rechercher</button>
+                </div>
+                <div id="c3spinner" class="jiu loh" style="padding: 20px;"></div>
+                <div class="area"></div>
+                <!--<div class="sub-section" style="margin-left:auto; margin-right:auto; width: 70%; color: rgb(35, 68, 129); background-color: rgb(155, 181, 230);"> </div>-->
+            </div>
+            <div style="background-color: rgb(220, 220, 220); font-size: 16px;"><br><br><br><br><br><br><br><br>
+            ©RomBricksCode 2020 - All right reserved.<br><br><br><br></div>
+        </div>
+        <div  id="text"></div>
+        <script type="text/javascript">
+            document.getElementById("c3spinner").style.display="none";
+            //get-a
+            function functiona1(){
+                var valuea=1;
+                document.getElementById("a2btn").style.display="none";
+                document.getElementById("b").style.display="block";
+            }
+            function functiona2(){
+                var valuea=2;
+                document.getElementById("a1btn").style.display="none";
+                document.getElementById("b").style.display = "block";
+            }
+            //get-b
+            function functionb1(){
+                var myvariable="rombrickscode";
+                document.getElementById("b2btn").style.display="none";
+                document.getElementById("c").style.display="block";
+                document.getElementById("text").innerHTML = "<input id='cache' value='rombrickscode'>";
+                document.getElementById("cache").style.display="none";
+            }    
+            function functionb2(){
+                var myvariable="rbricks";
+                document.getElementById("b1btn").style.display="none";
+                document.getElementById("c").style.display="block";
+                document.getElementById("text").innerHTML = "<input id='cache' value='rbricks'>";
+                document.getElementById("cache").style.display="none";
+            }
+            //redirect
+            function functionc() {
+                var numero=document.getElementById("c1input").value;
+                if (isNaN(numero) || numero < 1 || numero > 10000) {
+                    document.getElementById("c1input").style.border="solid 5px rgb(209, 69, 69)";
+                    document.getElementById("c1input").style.padding="20px";
+                    document.getElementById("c1input").style.color="rgb(209, 69, 69)";
+                }
+                else{
+                    document.getElementById("c1input").style.border="solid 3px rgb(21, 180, 92)";
+                    document.getElementById("c1input").style.padding="22px";
+                    document.getElementById("c1input").style.color="rgb(21, 180, 92)";
+                    var myvar = document.getElementById("cache").value; 
+                    document.write ("recherche en cours");
+                    var chemin="https://benbricks.github.io/images/"+myvar+"/img"+numero+".png";
+                    window.location.replace (chemin);
+                }
+            } 
+        </script>
+    </body>
+</html>
