@@ -261,14 +261,14 @@ rbcjs.getHttpData = function (file, func) {
 rbcjs.getHttpObject = function (file, func) {
   rbcjs.http(file, function () {
     if (this.readyState == 4 && this.status == 200) {
-      func(JSON.parse(this.responseText));
+      func(rbcjsON.parse(this.responseText));
     }
   });
 };
 rbcjs.displayHttp = function (id, file) {
   rbcjs.http(file, function () {
     if (this.readyState == 4 && this.status == 200) {
-      rbcjs.displayObject(id, JSON.parse(this.responseText));
+      rbcjs.displayObject(id, rbcjsON.parse(this.responseText));
     }
   });
 };
